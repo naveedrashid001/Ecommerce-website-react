@@ -1,0 +1,31 @@
+.offer-section {
+    background-color: #f8c317;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sale {
+    color: #003b70;
+    font-size: 4rem;
+}
+
+.countdown-item {
+    background-color: #003b70;
+    color: white;
+    padding: 20px;
+    font-size: 2rem;
+    border-radius: 10px;
+    width: 70px;
+}
+
+.product-section .card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+}
+
+.product-section .card img {
+    height: 150px;
+    object-fit: cover;
+}
+
