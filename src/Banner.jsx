@@ -33,6 +33,15 @@ const Banner = ({ products }) => {
         return () => clearInterval(timer); // Clean up timer on component unmount
     }, []);
 
+    // Get 2 random products
+    const getRandomProducts = (products) => {
+        if (products.length <= 2) return products;
+        const shuffled = [...products].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, 2);
+    };
+
+    const randomProducts = getRandomProducts(products);
+
     return (
         <div className="container my-5">
             <div className="row">
@@ -55,15 +64,15 @@ const Banner = ({ products }) => {
                     <div className="product-section">
                         <h3 className="my-3">Products Included</h3>
                         <div className="row">
-                            {products && products.length > 0 ? (
-                                products.map((product) => (
+                            {randomProducts && randomProducts.length > 0 ? (
+                                randomProducts.map((product) => (
                                     <div className="col-md-6 mb-3" key={product.id}>
                                         <div className="card">
                                             <img src={product.image} className="card-img-top" alt={product.name} />
                                             <div className="card-body">
                                                 <h5 className="card-title">{product.name}</h5>
                                                 <p className="card-text">${product.price}</p>
-                                                <a href={product.link} className="btn btn-outline-success">View Product</a>
+                                                <Link to={`/product/${product.id}`} className="btn btn-outline-success">View Product</Link>
                                             </div>
                                         </div>
                                     </div>

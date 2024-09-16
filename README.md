@@ -1,3 +1,16 @@
+# dummy product links 
+
+1) product: https://dummyjson.com/products
+
+2) product categorie: https://dummyjson.com/products/categories
+
+3) product related data : https://dummyjson.com/products/category/smartphones
+pagination 
+
+# uplod image
+
+postimg website we  use to upload img online 
+
 # notification 
 
 react tostpy

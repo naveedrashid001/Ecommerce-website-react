@@ -7,6 +7,7 @@ import Header from './common/Header.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Product from './pages/Product/Product.jsx';
 import Banner from './Banner.jsx';
+import AboutMe from './pages/AboutMe.jsx';
 
 // Define the products array directly in index.js
 const products = [
@@ -28,15 +29,15 @@ const products = [
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Banner products={products} />} />
-        <Route path='/home' element={<Banner products={products} />} />
-        <Route path='/product' element={<Product />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  </div>
+  <BrowserRouter>
+    <Header />
+    <Routes>
+      <Route path='/' element={<Banner products={products} />} />
+      <Route path='/home' element={<Banner products={products} />} />
+      <Route path='/product' element={<Product />} />
+      <Route path='/product/:id' element={<Product />} /> 
+      <Route path='/aboutme' element={<AboutMe />} />
+      <Route path='*' element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
 );
