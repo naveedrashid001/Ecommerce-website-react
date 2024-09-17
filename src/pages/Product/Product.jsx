@@ -3,7 +3,8 @@ import Catogary from './Catogary';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Import Link
+// import Catogary from './Catogary.jsx'; 
 
 function Product() {
   const [finalCategory, setFinalCategory] = useState([]);
@@ -124,11 +125,13 @@ function Product() {
               <div style={{ textAlign: 'center' }}>
                 No Product Found
                 <br />
+                <Link to={`/product/${id}`}>
                 <img
                   src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'
                   alt='loading img'
                   style={{ margin: '20px auto', display: 'block', width: '400px' }}
                 />
+                </Link>
               </div>
             )}
           </div>
@@ -143,11 +146,13 @@ export default Product;
 function ProductItem({ product }) {
   return (
     <div className="col-sm-4 p-2 shadow-lg text-center mb-2 mx-auto mb-5">
-      <img
-        src={product.thumbnail}
-        alt={product.title}
-        className="img-fluid px-3"
-      />
+      <Link to={`/product/${product.id}`}>
+        <img
+          src={product.thumbnail}
+          alt={product.title}
+          className="img-fluid px-3"
+        />
+      </Link>
       <h5 className="mt-3">{product.title}</h5>
       <b className="pb-2">{product.price}$</b>
     </div>

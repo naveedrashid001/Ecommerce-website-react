@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/index.css';
 import Header from './common/Header.jsx';
-import NotFound from './pages/NotFound.jsx';
 import Product from './pages/Product/Product.jsx';
 import Banner from './Banner.jsx';
+import ProductDetail from './pages/Product/ProductDetail.jsx'; // Import ProductDetail component
 import AboutMe from './pages/AboutMe.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 // Define the products array directly in index.js
 const products = [
@@ -35,9 +36,11 @@ root.render(
       <Route path='/' element={<Banner products={products} />} />
       <Route path='/home' element={<Banner products={products} />} />
       <Route path='/product' element={<Product />} />
-      <Route path='/product/:id' element={<Product />} /> 
+      <Route path='/product/:id' element={<ProductDetail />} />
       <Route path='/aboutme' element={<AboutMe />} />
       <Route path='*' element={<NotFound />} />
+    
+     
     </Routes>
   </BrowserRouter>
 );
