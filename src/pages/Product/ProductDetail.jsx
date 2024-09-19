@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom'; 
+import { useParams } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function ProductDetail() {
+  
+  const navigate = useNavigate();
+
   const { id } = useParams(); // Get the product ID from the URL
   const [product, setProduct] = useState(null);
 
@@ -37,9 +41,9 @@ function ProductDetail() {
           <p><strong><i class="bi bi-currency-dollar text-success"></i> Price:</strong>  {product.price} $</p>
           <p><strong><i class="bi bi-info-circle-fill text-success"></i> warrantyInformation:</strong>  {product.warrantyInformation}</p>
           <p><strong><i class="bi bi-star-fill text-warning"></i> Rating: </strong> {product.rating}</p>
-          <Link to={'/product'}>
-          <button style={{backgroundColor:"#003B70"}} className='btn me-2 text-white'>Back </button> 
-          </Link>
+          
+          <button onClick={() => navigate(-1)}  style={{backgroundColor:"#003B70"}} className='btn me-2 text-white'>Back </button> 
+       
         </div>
         
       </div>
